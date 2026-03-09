@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Avt7 {
+public class Atv7 {
     public static void main(String[] args) {
         System.out.println("Informe a Enstão \n1 - Primavera\n2 - Verão \n3 - Outono \n4 - Inverno");
         Scanner sc = new Scanner(System.in);

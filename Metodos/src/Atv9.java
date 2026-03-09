@@ -8,7 +8,6 @@ public class Atv9 {
             return false;
         }
     }
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Informe Numero: ");

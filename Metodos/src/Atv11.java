@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Atv4 {
+public class Atv11 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -10,44 +10,40 @@ public class Atv4 {
             System.out.print("Digite o valor para a posição " + i + ": ");
             vetor[i] = sc.nextInt();
         }
-
-        maior(vetor);
-        menor(vetor);
-        media(vetor);
+        System.out.println("Maior: " + maior(vetor));
+        System.out.println("Menor: " + menor(vetor));
+        System.out.println("Media: " + media(vetor));
     }
 
-    public static void maior(int vetor[]) {
+    public static int maior(int vetor[]) {
         int maior = vetor[0];
-
         for (int i = 1; i < vetor.length; i++) {
             if (vetor[i] > maior) {
                 maior = vetor[i];
             }
-        }
 
-        System.out.println("Maior: " + maior);
+        }
+        return maior;
     }
 
-    public static void menor(int vetor[]) {
+    public static int menor(int vetor[]) {
         int menor = vetor[0];
-
         for (int i = 1; i < vetor.length; i++) {
             if (vetor[i] < menor) {
                 menor = vetor[i];
             }
-        }
 
-        System.out.println("Menor: " + menor);
+        }
+        return menor;
     }
 
-    public static void media(int vetor[]) {
+    public static double media(int vetor[]) {
         int soma = 0;
 
         for (int i = 0; i < vetor.length; i++) {
             soma += vetor[i];
         }
-
-        double media = (double) soma / vetor.length;
-        System.out.println("Media: " + media);
+        return (double) soma / vetor.length;
     }
+
 }
