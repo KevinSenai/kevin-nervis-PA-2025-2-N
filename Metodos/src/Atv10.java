@@ -3,11 +3,7 @@ import java.util.Scanner;
 public class Atv10 {
 
     public static boolean limite(int n, int max){
-        if(n <= max){
-            return true;
-        }else{
-            return false;
-        }
+        return n <= max;
     }
 
     public static void main(String[] args) {

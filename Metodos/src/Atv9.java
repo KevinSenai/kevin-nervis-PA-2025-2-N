@@ -2,11 +2,7 @@ import java.util.Scanner;
 
 public class Atv9 {
     public static boolean parImpar(int n){
-        if(n % 2 == 0 ){
-            return true;
-        }else{
-            return false;
-        }
+        return n % 2 == 0;
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
