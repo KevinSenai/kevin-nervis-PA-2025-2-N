@@ -1,6 +1,6 @@
 public class Aeronave {
      private String modelo;
-    private int passageiros;
+     private int passageiros;
      private double velocidadeMaxima;
      private double capacidadeCombustivel;
      private  double queimaCombustivelMin;
