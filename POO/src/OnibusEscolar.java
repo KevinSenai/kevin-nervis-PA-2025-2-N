@@ -2,9 +2,18 @@ public class OnibusEscolar {
     int Alunos;
     int Professores;
 
-    public OnibusEscolar(int Alunos, int professores) {
-        Professores = professores;
+    @Override
+    public String toString() {
+        return "Quantidade de Alunos:" + Alunos + "\nQuantidade Professores: " + Professores;
+    }
+
+    public OnibusEscolar(int professores, int Alunos) {
+        setProfessores(professores);
         setAlunos(Alunos);
+
+    }
+    public void setProfessores(int professores) {
+        Professores = professores;
     }
     public void setAlunos(int Alunos){
         this.Alunos = Alunos;
@@ -14,10 +23,7 @@ public class OnibusEscolar {
             this.Alunos = 40;
         }
     }
-    @Override
-    public String toString() {
-        return "Quantidade de Alunos:" + Alunos + "\nQuantidade Professores: " + Professores;
-    }
+
 
 
 

@@ -1,43 +1,39 @@
 public class Atv7 {
     public static void main(String[] args) {
 
-        Aeronave[] aeronave = new Aeronave[4];
-         aeronave[0] = new Aeronave();
-         aeronave[1] = new Aeronave();
-         aeronave[2] = new Aeronave();
-         aeronave[3] = new Aeronave();
 
-        aeronave[0].Aeronave("Cinderela",350,3000,1000,50 );
+        Aeronave a1 = new Aeronave("Prime", 250, 2500, 250, 25);
+        Aeronave a2 = new Aeronave("Etheria", 600, 6000, 600, 60);
+        Aeronave a3 = new Aeronave("Alfa", 1000, 10000, 1000, 100);
+        Aeronave a4 = new Aeronave("Hino",2000,20000,2000,20);
+        Aeronave aeronave[] = {
+            a1, a2, a3, a4
+        };
 
-        aeronave[1].Aeronave("Atlas", 200, 2500, 1000, 25);
 
-        aeronave[2].Aeronave("Etheria", 525, 6000, 1000, 70);
-
-        aeronave[3].Aeronave("Alfa", 450, 10000, 2000, 100);
 
         Aeronave maior = aeronave[0];
-        for (int i = 0; i < aeronave.length; i++){
-            if (aeronave[i].getPassageiros() > maior.getPassageiros()){
+        Aeronave tempoAr = aeronave[0];
+        Aeronave MaiorDistancia = aeronave[0];
+        for (int i = 0; i < aeronave.length; i++) {
+            if (aeronave[i].getPassageiros() > maior.getPassageiros()) {
                 maior = aeronave[i];
             }
-        }
 
-        Aeronave tempoAr = aeronave[0];
-        for (int i = 0; i < aeronave.length; i++){
-            if (aeronave[i].tempoAr() > tempoAr.getPassageiros()){
+
+            if (aeronave[i].tempoAr() > tempoAr.getPassageiros()) {
                 tempoAr = aeronave[i];
             }
-        }
-        Aeronave MaiorDistancia = aeronave[0];
-        for (int i = 0; i < aeronave.length; i++){
-            if (aeronave[i].distancia() > MaiorDistancia.getPassageiros()){
+
+
+            if (aeronave[i].distancia() > MaiorDistancia.getPassageiros()) {
                 MaiorDistancia = aeronave[i];
             }
         }
 
         System.out.println("Leva maior numero de passageiro: " + maior.getModelo());
         System.out.println("Fica mais tempo no ar: " + tempoAr.getModelo());
-        System.out.println("Maior Distancia: "+MaiorDistancia.getModelo());
+        System.out.println("Maior Distancia: " + MaiorDistancia.getModelo());
 
     }
 }

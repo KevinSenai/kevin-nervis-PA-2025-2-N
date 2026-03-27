@@ -1,15 +1,42 @@
 public class Contribuinte {
-     String nome;
-     String cpf;
-     String UF;
-
+     private String nome;
+     private String cpf;
+     private String UF;
     double rendaAnual;
 
-    public Contribuinte(String nome, String cpf, String UF, double rendaAnual) {
+    @Override
+    public String toString() {
+
+
+        return String.format("Nome: %s\nImposto: %.2f",nome,impostoPagar());
+    }
+
+    public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    public void setUF(String UF) {
         this.UF = UF;
-        this.rendaAnual = rendaAnual;
+    }
+
+    public void setRendaAnual(double rendaAnual) {
+
+        if (rendaAnual < 0){
+            System.out.println("Erro Valor de Renda Negativa!");
+        }else{
+            this.rendaAnual = rendaAnual;
+        }
+    }
+
+    public Contribuinte(String nome, String cpf, String UF, double rendaAnual) {
+        setNome(nome);
+        setCpf(cpf);
+        setUF(UF);
+        setRendaAnual(rendaAnual);
     }
     public double impostoPagar() {
         double aliquota;

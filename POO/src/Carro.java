@@ -1,28 +1,30 @@
 public class Carro {
-    double velocidade;
+    private double velocidadeCarro;
 
-    @Override
-    public String toString() {
-        return "velocidade: " + velocidade;
+    public Carro(double velocidadeCarro) {
+        setVelocidadeCarro(velocidadeCarro);
     }
 
-    public void setVelocidada(double velocidade) {
-        this.velocidade = velocidade;
+    public void setVelocidadeCarro(double velocidadeCarro) {
+        this.velocidadeCarro = velocidadeCarro;
     }
-
-    public void acelerar(int valor){
-        if(valor >= 0 && valor < 20){
-            setVelocidada(velocidade+valor);
-        }else{
-            System.out.println("Valor para acelerar Invalido");
+    public double acelerar(double valor){
+        double resuladoAcelerar = 0;
+        if (valor >= 0 && valor < 20){
+            resuladoAcelerar = velocidadeCarro + valor;
+        } else {
+            System.out.println("Velocidade inválida para acelerar!");
         }
-
+        return resuladoAcelerar;
     }
-    public void reduzir(int valor){
-        if(valor >= 0 && valor< 30){
-            setVelocidada(velocidade-valor);
-        }else{
-            System.out.println("Valor para Reduzir Invalido");
+
+    public double reduzir(double valor){
+        double resultadoReduzir = 0;
+        if (valor >= 0 && valor < 30){
+            resultadoReduzir = velocidadeCarro - valor;
+        } else {
+            System.out.println("Velocidade inválida para acelerar!");
         }
+        return resultadoReduzir;
     }
 }
