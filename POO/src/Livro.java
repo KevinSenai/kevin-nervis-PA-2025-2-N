@@ -1,4 +1,4 @@
 public class Livro {
-    String LivroNome;
-    boolean Emprestado;
+    private String LivroNome;
+    private boolean Emprestado;
 }

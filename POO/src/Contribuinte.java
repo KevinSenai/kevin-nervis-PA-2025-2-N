@@ -2,7 +2,7 @@ public class Contribuinte {
      private String nome;
      private String cpf;
      private String UF;
-    double rendaAnual;
+    private double rendaAnual;
 
     @Override
     public String toString() {

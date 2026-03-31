@@ -10,6 +10,10 @@ public class Atv8 {
         for (int i = 0; i < 5; i++){
             System.out.println(listaContribuinte[i].toString());
         }
-
+        double totalImpostoArrecado = 0;
+        for (int i = 0; i < 5; i++){
+            totalImpostoArrecado += listaContribuinte[i].impostoPagar();
+        }
+        System.out.println("Total Imposto: " + totalImpostoArrecado);
     }
 }
