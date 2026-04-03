@@ -6,8 +6,6 @@ public class Contribuinte {
 
     @Override
     public String toString() {
-
-
         return String.format("Nome: %s\nImposto: %.2f",nome,impostoPagar());
     }
 
@@ -16,7 +14,12 @@ public class Contribuinte {
     }
 
     public void setCpf(String cpf) {
-        this.cpf = cpf;
+        if (cpf == null || cpf.isBlank() || cpf.length() < 11){
+            throw new IllegalArgumentException("Erro CPF Invalido!");
+        }else{
+            this.cpf = cpf;
+        }
+
     }
 
     public void setUF(String UF) {
@@ -26,7 +29,7 @@ public class Contribuinte {
     public void setRendaAnual(double rendaAnual) {
 
         if (rendaAnual < 0){
-            System.out.println("Erro Valor de Renda Negativa!");
+            throw new IllegalArgumentException("Erro Valor de Renda Negativa!");
         }else{
             this.rendaAnual = rendaAnual;
         }
@@ -39,19 +42,17 @@ public class Contribuinte {
         setRendaAnual(rendaAnual);
     }
     public double impostoPagar() {
-        double aliquota;
         if (rendaAnual <= 4000){
-            aliquota = 0;
+            return  rendaAnual *0;
         } else if (rendaAnual <= 9000) {
-            aliquota = 0.058;
+            return rendaAnual *0.058;
         } else if (rendaAnual <= 25000) {
-            aliquota = 0.15;
+            return rendaAnual *0.15;
         } else if (rendaAnual <= 35000) {
-            aliquota = 0.275;
+            return rendaAnual *0.275;
         } else {
-            aliquota = 0.30;
+            return rendaAnual * 0.30;
         }
-        return rendaAnual * aliquota;
     }
 }
 

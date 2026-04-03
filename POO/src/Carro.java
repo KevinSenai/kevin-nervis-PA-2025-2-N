@@ -13,7 +13,7 @@ public class Carro {
         if (valor >= 0 && valor < 20){
             resuladoAcelerar = velocidadeCarro + valor;
         } else {
-            System.out.println("Velocidade inválida para acelerar!");
+            throw  new IllegalArgumentException("Velocidade inválida para acelerar!");
         }
         return resuladoAcelerar;
     }
@@ -23,7 +23,7 @@ public class Carro {
         if (valor >= 0 && valor < 30){
             resultadoReduzir = velocidadeCarro - valor;
         } else {
-            System.out.println("Velocidade inválida para acelerar!");
+            throw  new IllegalArgumentException("Velocidade inválida para acelerar!");
         }
         return resultadoReduzir;
     }

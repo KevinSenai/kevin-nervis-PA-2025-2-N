@@ -19,7 +19,9 @@ public class OnibusEscolar {
         this.Alunos = Alunos;
         if (Professores == 0){
             this.Alunos = 0;
-        }else if (Alunos > 40) {
+        }else if (Alunos < 0) {
+            throw new IllegalArgumentException("Erro numero de alunos negativo!");
+        }else if(Alunos > 40){
             this.Alunos = 40;
         }
     }
