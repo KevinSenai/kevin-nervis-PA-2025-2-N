@@ -1,33 +1,34 @@
 public class Livro {
-    private String Titulo;
-    private boolean Emprestado;
-
-    public void setEmprestado() {
-        Emprestado = false;
-    }
+    private String titulo;
+    private boolean emprestado = false;
 
     @Override
     public String toString() {
-        if (Emprestado){
-            return Titulo + "- Status: Emprestado ";
-        }else {
-            return Titulo + " - Status: Devolvido";
+        if (emprestado) {
+            return titulo + " - Status: Emprestado";
+        } else {
+            return titulo + " - Status: Disponível";
         }
     }
 
     public Livro(String titulo) {
         setTitulo(titulo);
-        setEmprestado(Emprestadod);
     }
 
     public void setTitulo(String titulo) {
-        Titulo = titulo;
+        if (titulo == null || titulo.isBlank()){
+            throw new IllegalArgumentException("Erro nome não registrado");
+        }else {
+            this.titulo = titulo;
+        }
     }
-    public void emprestar(){
-        return Emprestado = true;
 
+
+    public void emprestar() {
+        emprestado = true;
     }
-    public boolean devolver(){
-        return Emprestado = false;
+
+    public void devolver() {
+        emprestado = false;
     }
 }
