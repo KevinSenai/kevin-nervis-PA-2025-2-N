@@ -14,7 +14,7 @@ public class Atv4Array {
         numeros.add(7);
         numeros.add(10);
         numeros.add(56);
-        System.out.println("Índice["+numeros.indexOf(n)+"]\nStatus:" + numeros.contains(n));
+        System.out.println("Índice["+numeros.indexOf(n)+"]");
 
     }
 }
