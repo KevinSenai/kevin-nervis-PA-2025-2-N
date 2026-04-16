@@ -12,10 +12,8 @@ public class Atv3Array {
         int n = sc.nextInt();
         ListaNumeros.add(n);
         while ( n != 0){
+            ListaNumeros.add(n);
             n = sc.nextInt();
-            if (n != 0) {
-                ListaNumeros.add(n);
-            }
         }
         double soma = 0;
         for(int i = 0; i < ListaNumeros.size();i++){
