@@ -1,52 +1,56 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class SistemaAluno {
-    private String Nome;
-    private int idade;
-    private int matricula;
-    private String curso;
-    private double media;
+    private List<Aluno> ListaAlunos;
 
-    public SistemaAluno(String nome, int idade, int matricula, String curso, double media) {
-        setNomeAluno(nome);
-        setIdade(idade);
-        setMatricula(matricula);
-        setCurso(curso);
-        setMedia(media);
+    public  SistemaAluno(){
+        ListaAlunos = new ArrayList<>();
     }
+    public void addAluno(Aluno aluno){
+        ListaAlunos.add(aluno);
+    }
+    public List<Aluno> BuscarAluno(String Curso){
+        List<Aluno> listAluno = new ArrayList<>();
 
-    public void setNomeAluno(String nome) {
-        if (nome == null || nome.isBlank()){
-            new IllegalAccessError("Nome Inválido");
+        for ( Aluno aluno : ListaAlunos){
+            if (aluno.getIdade() >= 18 && aluno.getCurso().equalsIgnoreCase(Curso) && aluno.getMedia() >= 7){
+                listAluno.add(aluno);
+            }
         }
-        Nome = nome;
+        return  listAluno;
     }
 
-    public void setIdade(int idade) {
-        if (idade <= 0){
-            new IllegalAccessError("Idade Inválida");
+    public Aluno buscarMatricula(int matriculaAluno){
+        for(Aluno aluno : ListaAlunos){
+            if (aluno.getMatricula() == matriculaAluno){
+                return aluno;
+            }
         }
-        this.idade = idade;
+        return null;
     }
 
-    public void setMatricula(int matricula) {
-        if (matricula <= 0){
-            new IllegalAccessError("Matricula Inválida");
+    public void exibirAlunoCurso(String curso) {
+        System.out.println("--- LISTA DE ALUNOS QUALIFICADOS (" + curso+ ") ---");
+        List<Aluno> filtrados = BuscarAluno(curso);
+
+        if (filtrados.isEmpty()) {
+            System.out.println("Nenhum aluno atende aos requisitos neste curso.");
+        } else {
+            for (Aluno a : filtrados) {
+                System.out.println(a);
+            }
         }
-        this.matricula = matricula;
     }
 
-    public void setCurso(String curso) {
-        if (curso == null || curso.isBlank()){
-            new IllegalAccessError("Curso Inválido");
+    public void exibirMatricula(int matricula) {
+        System.out.println("--- RESULTADO DA BUSCA POR MATRÍCULA ---");
+        Aluno aluno = buscarMatricula(matricula);
+
+        if (aluno != null) {
+            System.out.println(aluno);
+        } else {
+            System.out.println("Erro: Aluno com matrícula " + matricula + " não encontrado.");
         }
-        this.curso = curso;
     }
-
-    public void setMedia(double media) {
-        if (media < 0){
-            new IllegalAccessError("Media Inválida");
-        }
-        this.media = media;
-    }
-
-
 }
