@@ -22,6 +22,6 @@ public class Exe3Aluno {
         System.out.println(sistema.buscarAlunos("Informatica", 20, 7));
 
         System.out.println("\nRESULTADO DA BUSCA POR MATRÍCULA");
-        System.out.println(sistema.buscarMatricula(6));
+        System.out.println(sistema.buscarAlunos(6));
     }
 }

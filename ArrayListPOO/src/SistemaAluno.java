@@ -21,7 +21,7 @@ public class SistemaAluno {
             return listaFilAlunos;
     }
 
-    public Aluno buscarMatricula(int matriculaAluno){
+    public Aluno buscarAlunos(int matriculaAluno){
         for(Aluno a : listaAlunos){
             if (a.getMatricula() == matriculaAluno){
                 return a;
