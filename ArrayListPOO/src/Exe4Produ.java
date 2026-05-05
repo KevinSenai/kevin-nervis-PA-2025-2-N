@@ -20,23 +20,20 @@ public class Exe4Produ {
         loja.addProduto(m6);
 
 
-        System.out.println("--- PRODUTO MAIS CARO (GERDAU) ---");
+        System.out.println("PRODUTO MAIS CARO (GERDAU)");
         Produtos caro = loja.buscarMaiorPreco("Gerdau");
-        System.out.println(caro != null ? caro : "Marca não encontrada.");
+        System.out.println(caro);
 
-        System.out.println("\n--- PRODUTOS VOTORANTIM (R$ 20 - R$ 40) ---");
-        List<Produtos> faixa = loja.filtroPreco("Votorantim", 20.0, 40.0);
-        for (Produtos p : faixa) {
-            System.out.println(p);
-        }
+        System.out.println("\nPRODUTOS VOTORANTIM (R$ 20 - R$ 40)");
+        System.out.println(loja.filtroPreco("Votorantim", 20.0, 40.0));
         
-        System.out.println("\n--- OPERAÇÃO DE VENDA ---");
+        System.out.println("\n OPERAÇÃO DE VENDA");
         if (caro != null && caro.vender(10)) {
             System.out.println("Venda de 10 unidades realizada com sucesso.");
             System.out.println("Novo status: " + caro);
         }
 
-        System.out.println("\n=== REPOSIÇÃO DE ESTOQUE ===");
+        System.out.println("\n REPOSIÇÃO DE ESTOQUE");
         System.out.println("Cimento Atual: " + m1.getQuantidadeEstoque() + " unidades.");
         m1.addEstoque(50);
         System.out.println("Cimento Adicionado: " + m1.getQuantidadeEstoque() + " unidades.");

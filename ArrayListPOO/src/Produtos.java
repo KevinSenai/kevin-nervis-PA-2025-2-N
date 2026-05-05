@@ -31,7 +31,6 @@ public class Produtos {
         return false;
     }
 
-    // Getters e Setters
     public String getMarca() { return Marca; }
     public String getModelo() { return Modelo; }
     public double getPreco() { return Preco; }

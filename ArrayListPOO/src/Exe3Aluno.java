@@ -17,8 +17,11 @@ public class Exe3Aluno {
         sistema.addAluno(aluno5);
         sistema.addAluno(aluno6);
 
-        sistema.exibirAlunoCurso("Informatica");
-        System.out.println("\n");
-        sistema.exibirMatricula(6);
+
+        System.out.println("LISTA DE ALUNOS QUALIFICADOS");
+        System.out.println(sistema.buscarAlunos("Informatica", 20, 7));
+
+        System.out.println("\nRESULTADO DA BUSCA POR MATRÍCULA");
+        System.out.println(sistema.buscarMatricula(6));
     }
 }

@@ -9,13 +9,12 @@ public class Aluno {
 
     @Override
     public String toString() {
-        return "=== FICHA DO ALUNO ===\n" +
+        return "\n\nFICHA DO ALUNO\n" +
                 "Nome: " + Nome + "\n" +
                 "Matrícula: " + matricula + "\n" +
                 "Curso: " + curso + "\n" +
                 "Idade: " + idade + " anos\n" +
-                "Média Final: " + media + "\n" +
-                "======================";
+                "Média Final: " + media;
     }
 
     public Aluno(String nome, int idade, int matricula, String curso, double media) {
@@ -34,7 +33,7 @@ public class Aluno {
     }
 
     public void setIdade(int idade) {
-        if (idade <= 0){
+        if (idade <= 5){
             new IllegalAccessError("Idade Inválida");
         }
         this.idade = idade;
@@ -55,7 +54,7 @@ public class Aluno {
     }
 
     public void setMedia(double media) {
-        if (media < 0){
+        if (media < 0 || media > 10){
             new IllegalAccessError("Media Inválida");
         }
         this.media = media;

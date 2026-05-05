@@ -2,37 +2,39 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SistemaAluno {
-    private List<Aluno> ListaAlunos;
+    private List<Aluno> listaAlunos;
 
     public  SistemaAluno(){
-        ListaAlunos = new ArrayList<>();
+        listaAlunos = new ArrayList<Aluno>();
     }
-    public void addAluno(Aluno aluno){
-        ListaAlunos.add(aluno);
+    public void addAluno(Aluno a){
+        listaAlunos.add(a);
     }
-    public List<Aluno> BuscarAluno(String Curso){
-        List<Aluno> listAluno = new ArrayList<>();
 
-        for ( Aluno aluno : ListaAlunos){
-            if (aluno.getIdade() >= 18 && aluno.getCurso().equalsIgnoreCase(Curso) && aluno.getMedia() >= 7){
-                listAluno.add(aluno);
-            }
-        }
-        return  listAluno;
+    public List<Aluno> buscarAlunos(String curso, int idade, double media){
+            List<Aluno> listaFilAlunos = new ArrayList<>();
+                 for(Aluno a : listaAlunos){
+                     if (a.getCurso().equalsIgnoreCase(curso) && a.getIdade() >= idade && a.getMedia() >= media){
+                         listaFilAlunos.add(a);
+                     }
+                 }
+            return listaFilAlunos;
     }
 
     public Aluno buscarMatricula(int matriculaAluno){
-        for(Aluno aluno : ListaAlunos){
-            if (aluno.getMatricula() == matriculaAluno){
-                return aluno;
+        for(Aluno a : listaAlunos){
+            if (a.getMatricula() == matriculaAluno){
+                return a;
             }
         }
         return null;
     }
 
-    public void exibirAlunoCurso(String curso) {
-        System.out.println("--- LISTA DE ALUNOS QUALIFICADOS (" + curso+ ") ---");
-        List<Aluno> filtrados = BuscarAluno(curso);
+    //Expanção de Codigo
+
+    /* public void exibirAlunoCurso() {
+        System.out.println(" LISTA DE ALUNOS QUALIFICADOS ");
+        List<Aluno> filtrados = buscarAlunos("Informatica", 20, 7);
 
         if (filtrados.isEmpty()) {
             System.out.println("Nenhum aluno atende aos requisitos neste curso.");
@@ -44,7 +46,7 @@ public class SistemaAluno {
     }
 
     public void exibirMatricula(int matricula) {
-        System.out.println("--- RESULTADO DA BUSCA POR MATRÍCULA ---");
+        System.out.println(" RESULTADO DA BUSCA POR MATRÍCULA ");
         Aluno aluno = buscarMatricula(matricula);
 
         if (aluno != null) {
@@ -52,5 +54,5 @@ public class SistemaAluno {
         } else {
             System.out.println("Erro: Aluno com matrícula " + matricula + " não encontrado.");
         }
-    }
+    } */
 }
