@@ -22,14 +22,14 @@ public class Retangulo {
 
     public void setAltura(double altura) {
         if (altura <= 0){
-            new IllegalAccessError("Altura Inválida");
+            throw new IllegalAccessError("Altura Inválida");
         }
         this.altura = altura;
     }
 
     public void setLargura(double largura) {
         if (largura <= 0){
-            new IllegalAccessError("Largura Inválida");
+            throw new IllegalAccessError("Largura Inválida");
         }
         this.largura = largura;
     }

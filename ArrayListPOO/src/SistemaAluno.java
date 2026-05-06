@@ -12,7 +12,11 @@ public class SistemaAluno {
     }
 
     public List<Aluno> buscarAlunos(String curso, int idade, double media){
-            List<Aluno> listaFilAlunos = new ArrayList<>();
+            if (curso == null || curso.isBlank() && idade <= 6 && media < 0){
+                throw new IllegalAccessError("Erro algum valor Invalido");
+            }
+
+        List<Aluno> listaFilAlunos = new ArrayList<>();
                  for(Aluno a : listaAlunos){
                      if (a.getCurso().equalsIgnoreCase(curso) && a.getIdade() >= idade && a.getMedia() >= media){
                          listaFilAlunos.add(a);

@@ -16,21 +16,21 @@ public class VendaFlor {
 
     public void setNomeFlor(String nomeFlor) {
         if (NomeFlor == null ){
-            new IllegalAccessError("Nome Invalido");
+            throw new IllegalAccessError("Nome Invalido");
         }
         NomeFlor = nomeFlor;
     }
 
     public void setPrecoFlor(double precoFlor) {
         if (PrecoFlor <= 0 ){
-            new IllegalAccessError("Nome Invalido");
+            throw new IllegalAccessError("Nome Invalido");
         }
         PrecoFlor = precoFlor;
     }
 
     public void setNomeCliente(String nomeCliente) {
         if (NomeCliente == null ){
-            new IllegalAccessError("Nome Invalido");
+            throw new IllegalAccessError("Nome Invalido");
         }
         NomeCliente = nomeCliente;
     }

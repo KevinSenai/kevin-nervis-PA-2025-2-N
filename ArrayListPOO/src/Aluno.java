@@ -27,35 +27,35 @@ public class Aluno {
 
     public void setNomeAluno(String nome) {
         if (nome == null || nome.isBlank()){
-            new IllegalAccessError("Nome Inválido");
+            throw new IllegalAccessError("Nome Inválido");
         }
         this.Nome = nome;
     }
 
     public void setIdade(int idade) {
         if (idade <= 5){
-            new IllegalAccessError("Idade Inválida");
+            throw new IllegalAccessError("Idade Inválida");
         }
         this.idade = idade;
     }
 
     public void setMatricula(int matricula) {
         if (matricula <= 0){
-            new IllegalAccessError("Matricula Inválida");
+            throw new IllegalAccessError("Matricula Inválida");
         }
         this.matricula = matricula;
     }
 
     public void setCurso(String curso) {
         if (curso == null || curso.isBlank()){
-            new IllegalAccessError("Curso Inválido");
+            throw new IllegalAccessError("Curso Inválido");
         }
         this.curso = curso;
     }
 
     public void setMedia(double media) {
         if (media < 0 || media > 10){
-            new IllegalAccessError("Media Inválida");
+            throw new IllegalAccessError("Media Inválida");
         }
         this.media = media;
     }
