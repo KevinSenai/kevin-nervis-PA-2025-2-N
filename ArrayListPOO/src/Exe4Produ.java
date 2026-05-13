@@ -28,7 +28,7 @@ public class Exe4Produ {
         System.out.println(loja.filtroPreco("Votorantim", 20.0, 40.0));
         
         System.out.println("\n OPERAÇÃO DE VENDA");
-        if (caro != null && caro.vender(10)) {
+        if (caro.vender(10)) {
             System.out.println("Venda de 10 unidades realizada com sucesso.");
             System.out.println("Novo status: " + caro);
         }

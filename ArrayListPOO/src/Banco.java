@@ -13,19 +13,24 @@ public class Banco {
     }
 
     public ContaBancaria sacar(String titulo, int saque){
-        for( ContaBancaria c : listaBancaria){
+        for( ContaBancaria c : listaBancaria) {
             if (c.getNomeTitular().equals(titulo)) {
+                if (saque <= 0) {
+                    throw new IllegalArgumentException("Saque negativo");
+                } else if (saque > c.getSaldo()) {
+                    throw new IllegalArgumentException("Saque exede o saldo");
+                }
                 if (c.getSaldo() >= saque) {
                     double novoSaldo = c.getSaldo() - saque;
                     c.setSaldo(novoSaldo);
                     return c;
-                } else {
-                    throw new IllegalAccessError("Saldo insuficiente!");
                 }
             }
+            throw new IllegalAccessError("Conta Invalida!");
         }
-        throw new IllegalAccessError("Conta Invalida!");
+        return null;
     }
+
     public ContaBancaria depositar(String titulo, int deposito){
         for (ContaBancaria c : listaBancaria){
             if (c.getNomeTitular().equals(titulo)){

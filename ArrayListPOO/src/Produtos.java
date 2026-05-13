@@ -38,7 +38,7 @@ public class Produtos {
 
     public void setMarca(String marca) {
         if (marca == null || marca.isBlank()){
-            throw new IllegalAccessError("Marca Invalida");
+            throw new IllegalArgumentException("Marca Invalida");
         }else{
             Marca = marca;
         }
@@ -46,7 +46,7 @@ public class Produtos {
     }
     public void setModelo(String modelo) {
         if (modelo == null || modelo.isBlank()){
-            throw new IllegalAccessError("Modelo Invalida");
+            throw new IllegalArgumentException("Modelo Invalida");
         }else{
             Modelo = modelo;
         }
@@ -54,14 +54,14 @@ public class Produtos {
     }
     public void setPreco(double preco) {
         if (preco <= 0){
-            throw new IllegalAccessError("Preço invalido");
+            throw new IllegalArgumentException("Preço invalido");
         }else{
             Preco = preco;
         }
     }
     public void setQuantidadeEstoque(int quantidadeEstoque) {
         if (quantidadeEstoque < 0){
-            throw new IllegalAccessError("Quantidae invalido");
+            throw new IllegalArgumentException("Quantidae invalido");
         }else{
             this.quantidadeEstoque = quantidadeEstoque;
         }

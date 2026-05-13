@@ -13,7 +13,7 @@ public class SistemaAluno {
 
     public List<Aluno> buscarAlunos(String curso, int idade, double media){
             if (curso == null || curso.isBlank() && idade <= 6 && media < 0){
-                throw new IllegalAccessError("Erro algum valor Invalido");
+                throw new IllegalArgumentException("Erro algum valor Invalido");
             }
 
         List<Aluno> listaFilAlunos = new ArrayList<>();
