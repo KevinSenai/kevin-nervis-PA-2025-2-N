@@ -19,25 +19,19 @@ public class Computador implements Dispositivo{
 
     @Override
     public boolean ligar() {
-        if (conectado == true){
-            return true;
-        }
-        return false;
+        return conectado;
     }
 
     @Override
     public boolean desligar() {
-        if (ligar() == true){
-            return true;
-        }
-        return false;
+        return ligar();
     }
 
     @Override
     public String obterStatus() {
-        if (desligar() == true){
-            return "Ligado";
+        if (conectado){
+            return "Computador " + modelo + " esta Ligado";
         }
-        return "Desligado";
+        return "Computador " + modelo + " Desligado";
     }
 }

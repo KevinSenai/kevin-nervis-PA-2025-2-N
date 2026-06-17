@@ -25,27 +25,17 @@ public class Notebook implements Dispositivo{
 
     @Override
     public boolean ligar() {
-        if (conectado == true || bateria > 10){
-            if (bateria <= 0){
-                throw new IllegalArgumentException("Bateria Negativa");
-            }
-        return true;
-        }
-
-        return false;
+        return conectado || bateria >= 10;
     }
 
     @Override
     public boolean desligar() {
-        if (ligar() == true){
-            return true;
-        }
-        return false;
+        return ligar();
     }
 
     @Override
     public String obterStatus() {
-        if (desligar() == true){
+        if (conectado){
             return "Ligado";
         }
             return "Desligado";
